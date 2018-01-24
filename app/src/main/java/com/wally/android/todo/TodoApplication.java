@@ -3,6 +3,7 @@ package com.wally.android.todo;
 import android.app.Application;
 import android.os.Handler;
 
+import com.wally.android.todo.util.EventBusUtil;
 import com.wally.android.todo.util.PropertyUtil;
 import com.wally.android.todo.util.TodoGreenDaoManager;
 
@@ -24,6 +25,7 @@ public class TodoApplication extends Application {
         super.onCreate();
         instnace = this;
         mainHandler = new Handler(getMainLooper());
+        EventBusUtil.init();
         PropertyUtil.init(this);
         TodoGreenDaoManager.init(this);
     }
