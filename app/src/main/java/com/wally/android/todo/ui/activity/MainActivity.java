@@ -11,7 +11,7 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 import com.wally.android.todo.R;
-import com.wally.android.todo.ui.base.BaseActivity;
+import com.wally.android.todo.base.BaseActivity;
 
 import butterknife.Bind;
 

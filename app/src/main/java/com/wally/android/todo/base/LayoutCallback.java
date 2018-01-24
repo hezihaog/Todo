@@ -1,11 +1,11 @@
-package com.wally.android.todo.ui.base;
+package com.wally.android.todo.base;
 
 /**
  * Package: com.wally.android.todo.ui.base
  * FileName: LayoutCallback
  * Date: on 2018/1/23  下午10:50
  * Auther: zihe
- * Descirbe:
+ * Descirbe:布局回调接口
  * Email: hezihao@linghit.com
  */
 

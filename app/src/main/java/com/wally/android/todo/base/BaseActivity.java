@@ -1,4 +1,4 @@
-package com.wally.android.todo.ui.base;
+package com.wally.android.todo.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,7 +11,7 @@ import butterknife.ButterKnife;
  * FileName: BaseActivity
  * Date: on 2018/1/23  下午10:49
  * Auther: zihe
- * Descirbe:
+ * Descirbe:Activity基类
  * Email: hezihao@linghit.com
  */
 
