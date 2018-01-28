@@ -89,6 +89,7 @@ public class MultiTypePool implements TypePool {
         return mContents;
     }
 
+    @Override
     public List<BaseViewProvider> getProviders() {
         return mProviders;
     }

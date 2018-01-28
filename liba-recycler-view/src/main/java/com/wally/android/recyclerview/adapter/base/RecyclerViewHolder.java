@@ -31,7 +31,6 @@ import android.widget.TextView;
  * 布局持有者
  */
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {
-
     private View mRootView;
 
     public RecyclerViewHolder(View itemView) {

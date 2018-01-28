@@ -116,7 +116,7 @@ public class HeaderFooterAdapter extends RecyclerView.Adapter<RecyclerViewHolder
         assert mItems != null;
         Object item = mItems.get(position);
         BaseViewProvider provider = getProviderByClass(item.getClass());
-        provider.onBindView(holder, item);
+        provider.onBindView(holder, item, position);
     }
 
     @Override

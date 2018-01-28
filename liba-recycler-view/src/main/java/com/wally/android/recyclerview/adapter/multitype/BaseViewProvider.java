@@ -23,33 +23,35 @@
 package com.wally.android.recyclerview.adapter.multitype;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.wally.android.base.LayoutCallback;
 import com.wally.android.recyclerview.adapter.base.RecyclerViewHolder;
 
 
 /**
  * ItemView 的管理者
  */
-public abstract class BaseViewProvider<T> {
+public abstract class BaseViewProvider<T> implements LayoutCallback {
     private LayoutInflater mInflater;
     private int mLayoutId;
     protected Context mContext;
 
-    public BaseViewProvider(@NonNull Context context, @NonNull @LayoutRes int layout_id) {
+    public BaseViewProvider(@NonNull Context context) {
         mInflater = LayoutInflater.from(context);
-        mLayoutId = layout_id;
+        mLayoutId = onLayoutId();
         mContext = context;
     }
 
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent) {
+        onLayoutBefore();
         View view = mInflater.inflate(mLayoutId, parent, false);
         RecyclerViewHolder viewHolder = new RecyclerViewHolder(view);
         onViewHolderIsCreated(viewHolder);
+        onLayoutAfter();
         return viewHolder;
     }
 
@@ -58,9 +60,7 @@ public abstract class BaseViewProvider<T> {
      *
      * @param holder ViewHolder
      */
-    public void onViewHolderIsCreated(RecyclerViewHolder holder) {
-
-    }
+    public abstract void onViewHolderIsCreated(RecyclerViewHolder holder);
 
     /**
      * 在绑定数据时调用，需要用户自己处理
@@ -68,5 +68,13 @@ public abstract class BaseViewProvider<T> {
      * @param holder ViewHolder
      * @param bean   数据
      */
-    public abstract void onBindView(RecyclerViewHolder holder, T bean);
+    public abstract void onBindView(RecyclerViewHolder holder, T bean, int position);
+
+    @Override
+    public void onLayoutBefore() {
+    }
+
+    @Override
+    public void onLayoutAfter() {
+    }
 }

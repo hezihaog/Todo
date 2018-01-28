@@ -1,1 +1,1 @@
-include ':app', ':liba-recycler-view'
+include ':todo-app', ':liba-recycler-view', ':liba-base'
